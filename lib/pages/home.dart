@@ -5,8 +5,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(//Scaffold is our main widget for the page
-
-        );
+    return Scaffold(
+      //Scaffold is our main widget for the page
+      appBar: AppBar(),
+    );
   }
 }
