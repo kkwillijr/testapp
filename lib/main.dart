@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'screens/food_inventory_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   final Key? widgetkey;
