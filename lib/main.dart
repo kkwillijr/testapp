@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/pages/home.dart';
+import 'screens/food_inventory_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Key? widgetkey;
 
-  // This widget is the root of your application.
+  const MyApp({super.key, this.widgetkey});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomePage());
+    return MaterialApp(
+      key: widgetkey,
+      title: 'Nutrition Tracking App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const FoodInventoryScreen(
+        foodItems: [],
+      ), // Initial screen of the app
+    );
   }
 }
 
